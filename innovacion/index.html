@@ -1,0 +1,247 @@
+<html>
+  <head>    
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-07-28" content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta charset="UTF-8">
+    <title>Poliedros areas y volumenes</title>
+    <meta name="description" content="Poliedros, areas y volumenes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="aframe-master.min.js"></script>
+    <script src="play-on-click.js"></script>
+    <script src="hide-on-play.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <a-assets>
+          <!--  Video de Rob Louw en Pexels -->
+         <video id="video" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline src="beach.mp4">
+        </video>
+       <audio 
+          id="background"
+          src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav">
+        </audio>
+      </a-assets>
+           
+      <a-sound 
+        src="#background" 
+        autoplay="true">
+      </a-sound>
+   
+      <!-- Animations. -->
+      <a-entity id="color" position="0 4.1 0"
+                animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+                text="color: green; align: center; value: INNOVACION DOCENTE E INICIACION A LA INVESTIGACION EDUCATIVA DE MATEMATICAS E INFORMATICA; width: 4">
+                
+      </a-entity>
+
+      <a-entity id="color" position="0 3.5 0"
+                animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+                text="color: green; align: center; value: SESION 3.- POLIEDROS AREAS Y VOLUMENES - 29MSEC 10A - 2020/21 GRUPO 19; width: 3.5">
+                
+      </a-entity>
+       
+      <!-- Anchors. -->
+
+      <!-- Introduccion a las figuras geométricas. -->
+
+      <a-entity position="0 3.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+                text="align: center; width: 3; color: green; value: Instrucciones">
+      </a-entity>
+
+      <a-entity position="0 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+                text="align: center; width: 2.5; color: green; value: El juego consiste en desplazarse por el entorno virtual encontrando todas las figuras geometricas incluidas. ">
+      </a-entity>
+
+      <a-entity position="0 2.3 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+                text="align: center; width: 2.5; color: green; value: Para desplazarse debes usar las teclas del cursor, mediante los controladores del dispositivo XR (realidad mixta, virtual o AR) o disposivito movil">
+      </a-entity>
+
+<!-- Poliedros regulares. -->
+
+<a-entity position="3 3.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: 3.1.- Poliedros regulares">
+</a-entity>
+
+<a-entity position="3 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Un poliedro regular es aquel que sus caras son poligonos regulares y son todas iguales. ">
+</a-entity>
+
+<a-entity position="3 2.3 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Las aristas tambien son todas iguales. Existen solo cinco tipos de poliedro regular convexos, llamados tambien solidos platonicos.">
+</a-entity>
+
+<!-- Tetraedro regular. -->
+
+<a-entity position="6 3.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Tetraedro regular">
+</a-entity>
+
+<a-entity position="6 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Poliedro regular cuya superficie esta formada por cuatro triangulos equilateros iguales.">
+</a-entity>
+
+<a-entity position="6 1.3 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" geometry="primitive: cone; radiusBottom: 1; radiusTop: 0; segmentsRadial: 4"></a-entity>
+
+<!-- Cubo. -->
+
+<a-entity position="9 3.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Cubo (o hexaedro regular)">
+</a-entity>
+
+<a-entity position="9 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #ff0"
+text="align: left; width: 2.5; color: green; value: Poliedro regular compuesto por seis cuadrados iguales">
+</a-entity>
+
+<a-entity position="9 1.3 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" geometry="primitive: box; width: 1; height: 1; depth: 1"></a-entity>
+
+<!-- Octaedro regular. -->
+
+<a-entity position="12 3.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Octaedro regular">
+</a-entity>
+
+<a-entity position="12 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #ff0"
+text="align: left; width: 2.5; color: green; value: Poliedro regular la superficie del cual esta constituida por ocho triangulos equilateros iguales">
+</a-entity>
+
+<a-entity position="12 1.3 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" geometry="primitive: octahedron"></a-entity>
+
+<!-- Dodecaedro regular. -->
+
+<a-entity position="15 3.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Dodecaedro regular">
+</a-entity>
+
+<a-entity position="15 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #ff0"
+text="align: left; width: 2.5; color: green; value: Poliedro regular formado por doce pentagonos regulares iguales">
+</a-entity>
+
+<a-entity position="15 1.3 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" geometry="primitive: dodecahedron"></a-entity>
+
+<!-- Icosaedro regular. -->
+
+<a-entity position="18 3.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Icosaedro regular">
+</a-entity>
+
+<a-entity position="18 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #ff0"
+text="align: left; width: 2.5; color: green; value: Poliedro regular, las caras del cual son veinte triangulos equilateros iguales">
+</a-entity>
+
+<a-entity position="18 1.3 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" geometry="primitive: icosahedron"></a-entity>
+
+
+<!-- Poliedros areas y volumenes -->
+
+<a-entity position="24 3.1 2" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 3; color: white; value: 3.3 Poliedros - Areas y Volumenes">
+</a-entity>
+
+<a-entity position="24 2.7 2" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Un prisma es un poliedro formado por 2 caras iguales y paralelas entre si">
+</a-entity>
+
+<a-entity position="24 2.3 2" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Y varias caras laterales formadas por paralelogramos.">
+</a-entity>
+
+<a-entity position="24 2 2" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Area prisma = (2 * Area Base) + Area lateral">
+</a-entity>
+
+<a-entity position="24 1.8 2" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Volumen prisma = Area Base * h">
+</a-entity>
+
+<a-entity position="24 1 2" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" geometry="primitive: cylinder; segmentsRadial: 6"></a-entity>
+
+<a-entity position="24.16937 1.23973 3.45612" rotation="0 -90 0" geometry="primitive: plane; width: 0.5; height: 0.115" material="color: #FA0" text="align: center; width: 2.5; color: white; value: Altura (h)">
+</a-entity>
+
+<a-entity position="22.90473 0.34366 2.01936" rotation="0 -90 0" geometry="primitive: plane; width: 0.8; height: 0.115" material="color: #FA0" text="align: center; width: 2.5; color: white; value: Area base">
+</a-entity>
+
+
+<!-- Areas y volumen de un prisma. -->
+
+<a-entity position="24 3.1 7" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 3; color: white; value: Areas y volumen de una piramide">
+</a-entity>
+
+<a-entity position="24 2.7 5.5" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Una piramide es un poliedro formado por una base poligonal y varias caras laterales, constituidas por triangulos que confluyen en un punto que es un vertice">
+</a-entity>
+
+<a-entity position="24 2.3 5.5" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: La distancia entre el vertice y el plano que contiene la base es la altura h.">
+</a-entity>
+
+<a-entity position="24 2.7 8.5" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: La piramide es un poligono regular, si la base de una piramide es recta y los triangulos isosceles que forman las caras laterales son todos iguales.">
+</a-entity>
+
+<a-entity position="24 2.3 8.5" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: La altura de uno cualquiera de los triangulos es la denominada apotema de la piramide regular">
+</a-entity>
+
+<a-entity position="24 2 7" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Area piramide = Area Base + Area lateral">
+</a-entity>
+
+<a-entity position="24 1.8 7" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Volumen piramide = (1/3) * Area Base * h">
+</a-entity>
+
+<a-entity position="24 1 7" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" geometry="primitive: cone; radiusBottom: 1; radiusTop: 0; segmentsRadial: 5"></a-entity>
+
+<a-entity position="24.16937 1.23973 7.7612" rotation="0 -90 0" geometry="primitive: plane; width: 0.5; height: 0.115" material="color: #FA0" text="align: center; width: 2.5; color: white; value: Altura (h)">
+</a-entity>
+
+<a-entity position="23.0729 0.34366 6.9649" rotation="0 -90 0" geometry="primitive: plane; width: 0.8; height: 0.115" material="color: #FA0" text="align: center; width: 2.5; color: white; value: Base">
+</a-entity>
+
+<!-- Poliedros areas y volumenes -->
+
+<a-entity position="24 3.1 12" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 3; color: white; value: Areas y volumen de un Ortoedro">
+</a-entity>
+
+<a-entity position="24 2.7 12" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Un ortoedro es un prisma cuadrangular recto cuyas bases y caras laterales son rectangulos">
+</a-entity>
+
+<a-entity position="24 2.4 12" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Area ortoedro = 2 * (a * b + a * c + b * c)">
+</a-entity>
+
+<a-entity position="24 2.2 12" rotation="0 -90 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FA0"
+text="align: center; width: 2.5; color: white; value: Volumen ortoedro = a * b * c">
+</a-entity>
+
+<!-- Hexagonal prism -->
+<a-entity position="24 1 12" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 -45 0" geometry="primitive: cylinder; segmentsRadial: 4"></a-entity>
+
+<a-entity position="23.02502 0.28634 11.2139" rotation="0 225 0" geometry="primitive: plane; width: 0.5; height: 0.115" material="color: #FA0" text="align: center; width: 2.5; color: white; value: a">
+</a-entity>
+
+<a-entity position="23.02502 0.31327 12.5816" rotation="0 -45 0" geometry="primitive: plane; width: 0.5; height: 0.115" material="color: #FA0" text="align: center; width: 2.5; color: white; value: b">
+</a-entity>
+
+<a-entity position="23.02502 1.16671 12.9" rotation="0 -90 0" geometry="primitive: plane; width: 0.5; height: 0.115" material="color: #FA0" text="align: center; width: 2.5; color: white; value: c">
+</a-entity>
+
+
+<a-videosphere rotation="0 -90 0" src="#video" play-on-click>
+</a-videosphere>
+<a-camera>
+
+<!-- Posicion de origen inicial de la camara y de los controles de teclas. -->
+
+<a-entity position="7 7 7">
+    <a-entity camera look-controls wasd-controls></a-entity>
+</a-entity>
+
+</a-scene>
+</body>
+</html>
