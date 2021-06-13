@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-07-28" content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+<meta charset="utf-8">
+<title>Sistemas de Ecuaciones Lineales</title>
+<meta name="description" content="Sistemas de ecuaciones lineales – A-Frame">
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="components/play-on-click.js"></script>
+<script src="components/hide-on-play.js"></script>
+<script src="components/aabb-collider.js"></script>
+<script src="components/grab.js"></script>
+<script src="components/ground.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
+    <a-assets>
+        <!--  Video de Rob Louw en Pexels -->
+       <video id="video" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline src="Beach.mp4">
+      </video>
+     <audio 
+        id="background"
+        src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav">
+      </audio>
+      <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
+    </a-assets>
+    <a-sound 
+    src="#background" 
+    autoplay="true">
+  </a-sound>
+
+
+<!-- Animations. -->
+<a-entity id="color" position="0 4.1 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: APRENDIZAJE Y ENSENANZA; width: 4"></a-entity>
+
+<a-entity id="color" position="0 3.9 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: DE MATEMATICAS E INFORMATICA; width: 4"></a-entity>
+</a-entity>
+
+<a-entity id="color" position="0 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: SESION 3.- SISTEMAS DE ECUACIONES LINEALES EJERCICIOS EN REALIDAD VIRTUAL; width: 3.5">
+</a-entity>
+
+<a-entity id="color" position="0 3.2 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: 28MSEC 10A - 2020/21 GRUPO 19; width: 3.5">
+</a-entity>
+
+<a-entity id="color" position="1.9 0.4 0" animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+ text="color: green; align: center; value: Coger y llevar los cubos al area marcada en el suelo segun el tipo de sistema; width: 4"></a-entity>
+
+<!-- Anchors. -->
+
+<!-- Sistemas de ecuaciones. -->
+<a-entity position="0 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 3; color: green; value: Instrucciones">
+</a-entity>
+
+<a-entity position="0 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: El juego consiste en desplazarse por el entorno virtual y mirar los sistemas de ecuaciones que aparecen en los cubos, el alumno debe coger los cubos y ponerlos en el area del suelo del sistema de ecuaciones correspondiente.">
+</a-entity>
+
+<a-entity position="0 1.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: Cuando el alumno situe todos los cubos debe capturar unas fotos con los cubos bien ubicados y compartirlas por correo al profesor de la asignatura">
+</a-entity>
+
+<a-entity position="0 1.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: Requiere controladores del dispositivo de realidad mixta, virtual o AR">
+</a-entity>
+
+<!-- Definicion de sistemas de ecuaciones lineales. -->
+<a-entity position="4 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: 3.1.- Definicion de sistemas de ecuaciones lineales">
+</a-entity>
+
+<a-entity position="4 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Un sistema de ecuaciones lineales es un conjunto de ecuaciones de primer grado con dos o mas incognitas">
+</a-entity>
+
+<a-entity position="4 2 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Se llama solucion de un sistema a los valores de las incognitas que satisfacen todas las ecuaciones a la vez.">
+</a-entity>
+
+<a-entity position="4 1.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Es decir, esos valores de las incognitas al sustituirlos en las ecuaciones las convierten en identidades.">
+</a-entity>
+
+<a-entity position="4 1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Cada solucion de un sistema debe tener tantos valores como incognitas tenga el sistema">
+</a-entity>
+
+<!-- Clases de sistemas de ecuaciones lineales. -->
+<a-entity position="8 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: 3.2.- Clases de sistemas">
+</a-entity>
+
+<a-entity position="8 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: Los sistemas de ecuaciones lineales pueden ser de las siguientes clases:">
+</a-entity>
+
+<a-entity position="8 2 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: A) Sistemas compatibles determinados (S.C.D). Son los que tienen una unica solucion (un unico valor para cada incognita).">
+</a-entity>
+
+<a-entity position="8 1.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: B) Sistemas Compatibles Indeterminados (S.C.I.). Son los que tienen infinitas soluciones.">
+</a-entity>
+
+<a-entity position="8 1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 2.5; color: green; value: C) Sistemas Incompatibles (S.I.) son los que no tienen ninguna solucion.">
+</a-entity>
+
+<a-entity class="cube" mixin="cube" position="0.30 0 1">
+    <a-entity scale="1 1 1" text="value: x+y+z=4; color: black" position="0.41 0.1 0.15"></a-entity>
+    <a-entity scale="1 1 1" text="value: x+y-z=0; color: black" position="0.41 0 0.15"></a-entity>
+    <a-entity scale="1 1 1" text="value: 2x-y-z=-1; color: black" position="0.41 -0.1 0.15"></a-entity>
+</a-entity>
+
+<a-entity class="cube" mixin="cube" position="0.80 0 1">
+  <a-entity scale="1 1 1" text="value: 3x-4y=26; color: black" position="0.41 0.05 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: x+2y=-8; color: black" position="0.41 -0.05 0.15"></a-entity>
+</a-entity>
+
+<a-entity class="cube" mixin="cube" position="1.4 0 1">
+  <a-entity scale="1 1 1" text="value: 3x-9y=6; color: black" position="0.41 0.05 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: -2x+6y=-4; color: black" position="0.41 -0.05 0.15"></a-entity>
+</a-entity>
+
+<a-entity class="cube" mixin="cube" position="1.9 0 1">
+  <a-entity scale="1 1 1" text="value: x+y=1; color: black" position="0.41 0.05 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: x+y=0; color: black" position="0.41 -0.05 0.15"></a-entity>
+</a-entity>
+
+<a-entity class="cube" mixin="cube" position="2.4 0 1">
+  <a-entity scale="1 1 1" text="value: x+y-3z=0; color: black" position="0.41 0.1 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: y+z=1; color: black" position="0.41 0 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: 3z=3; color: black" position="0.41 -0.1 0.15"></a-entity>
+</a-entity>
+
+<a-entity class="cube" mixin="cube" position="2.9 0 1">
+  <a-entity scale="1 1 1" text="value: x+y+6z=3; color: black" position="0.41 0.1 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: y-3z=5; color: black" position="0.41 0 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: 0=0; color: black" position="0.41 -0.1 0.15"></a-entity>
+</a-entity>
+
+<a-entity class="cube" mixin="cube" position="3.4 0 1">
+  <a-entity scale="1 1 1" text="value: x+y+5z=-2; color: black" position="0.41 0.1 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: 2y+4z=5; color: black" position="0.41 0 0.15"></a-entity>
+  <a-entity scale="1 1 1" text="value: 0=3; color: black" position="0.41 -0.1 0.15"></a-entity>
+</a-entity>
+
+<!-- Areas donde ubicar los cubos. -->
+<a-entity position="0 0.16323 3.97656" geometry="primitive: plane; width: 3; height: 3" material="color: #FF0" 
+text="align: center; width: 3; color: green; value: Sistemas Compatibles Determinados" rotation="-90 0 0">
+</a-entity>
+
+<a-entity position="4 0.16323 3.97656" geometry="primitive: plane; width: 3; height: 3" material="color: #FF0" 
+text="align: center; width: 3; color: green; value: Sistemas Compatibles Indeterminados" rotation="-90 0 0">
+</a-entity>
+
+<a-entity position="8 0.16323 3.97656" geometry="primitive: plane; width: 3; height: 3" material="color: #FF0" 
+text="align: center; width: 3; color: green; value: Sistemas Incompatibles" rotation="-90 0 0">
+</a-entity>
+
+<!-- Iluminacion. -->
+<a-entity light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0" position="-2.5 1.2 2.2"></a-entity>
+<a-entity light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0" position="-20 -7 -40"></a-entity>
+<a-entity light="type: ambient; color: #f4f4f4; intensity: 0.25;" position="-8 10 -18"></a-entity>
+</a-entity>
+
+<!-- Controles para dispositivo XR -->
+<a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
+<a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
+
+<!-- Posicion de la camara -->
+<a-entity position="3 1.5 4.2" camera look-controls wasd-controls></a-entity>
+</a-scene>
+</body>
+</html>
+
+
