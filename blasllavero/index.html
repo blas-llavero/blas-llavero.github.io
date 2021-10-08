@@ -29,7 +29,6 @@
       <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
      
       <a-asset-item id="oq2_customized"  src="assets/oculus_quest_2_customized_steve_addition/scene.gltf"></a-asset-item>
-      <a-asset-item id="datacenter"  src="assets/datacenter/scene.gltf"></a-asset-item>
       <a-asset-item id="classroom"  src="assets/auiv_classroom/scene.gltf"></a-asset-item>
       <a-asset-item id="cyberpunk_laptop"  src="assets/cyberpunk_laptop/scene.gltf"></a-asset-item>
         <a-asset-item id="server_rack"  src="assets/server_rack_and_console_v3/scene.gltf"></a-asset-item>
@@ -41,7 +40,7 @@
   </a-sound>
 
 <!-- Entorn -->
-<a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+<!-- <a-entity environment="preset: forest; dressingAmount: 500"></a-entity> -->
 
 <!-- Name -->
 <a-entity id="color" position="4 4.1 0"
@@ -216,18 +215,17 @@ animation="property: components.text.material.uniforms.color.value; type: color;
 text="color: green; align: center; value: PERFIL INFORMATIC; width: 3.5">
 </a-entity>
 
-<!-- <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#datacenter" scale="10 10 10" position="19 -3 0 " ></a-entity>-->
-<!-- <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#classroom" scale="0.3 0.3 0.3" position="19 -3 0 " ></a-entity> -->
-<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#oq2_customized" scale="0.2 0.2 0.2" position="19 1.2 0 " ></a-entity>
-<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#cyberpunk_laptop" scale="0.3 0.3 0.3" position="19 0.2 0 " ></a-entity>
-<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 -200 0" gltf-model="#server_rack" scale="0.3 0.3 0.3" position="21 0.2 0 " ></a-entity>
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 100000" rotation="0 240 0" gltf-model="#classroom" scale="0.3 0.3 0.3" position="15 -3 0 " ></a-entity>
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#oq2_customized" scale="0.1 0.1 0.1" position="19 2.2 0 " ></a-entity>
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#cyberpunk_laptop" scale="0.5 0.5 0.5" position="19 1 0 " ></a-entity>
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 -200 0" gltf-model="#server_rack" scale="0.3 0.3 0.3" position="21 1 0 " ></a-entity>
 
 <a-entity position="20 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
-text="align: center; width: 3; color: green; value: Catala i Angles: Alt">
+text="align: center; width: 3; color: green; value: ">
 </a-entity>
 
 <a-entity position="20 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
-text="align: center; width: 3; color: green; value: Frances: Mig">
+text="align: center; width: 3; color: green; value: ">
 </a-entity>
                                                                  
 <!-- Idiomes -->
@@ -282,4 +280,4 @@ text="align: center; width: 3; color: green; value: ">
 <a-entity position="3 2 4.2" camera look-controls wasd-controls></a-entity>
 </a-scene>
 </body>
-</html>                                     
+</html>                                                            
