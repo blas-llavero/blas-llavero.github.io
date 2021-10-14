@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-07-28" content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+<meta charset="utf-8">
+<title>Blas Llavero Ruiz</title>
+<meta name="description" content="Blas Llavero Ruiz">
+
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="../blasllavero/components/aabb-collider.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+
+</head>
+
+<body>
+<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
+    <a-assets>
+      <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
+      <a-asset-item id="oq2_customized"  src="../blasllavero/assets/oculus_quest_2_customized_steve_addition/scene.gltf"></a-asset-item>
+      <a-asset-item id="classroom"  src="../blasllavero/assets/auiv_classroom/scene.gltf"></a-asset-item>
+      <a-asset-item id="cyberpunk_laptop"  src="../blasllavero/assets/cyberpunk_laptop/scene.gltf"></a-asset-item>
+      <a-asset-item id="server_rack"  src="../blasllavero/assets/server_rack_and_console_v3/scene.gltf"></a-asset-item>
+    </a-assets>
+
+<!-- Ambiente  -->
+<!-- <a-entity environment="preset: forest; dressingAmount: 500"></a-entity> -->
+
+<!-- Nome -->
+<a-entity id="color" position="4 4.1 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: BLAS LLAVERO RUIZ; width: 7"></a-entity>
+
+<!-- Formazione accademica  -->  
+<a-entity id="color" position="0 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: FORMAZIONE ACCADEMICA; width: 3.5">
+</a-entity>
+  
+<a-entity position="-0.3 3.075 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: 2020">
+</a-entity>
+
+<a-entity position="0 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Master in Istruzione Secondaria e Formazione Professionale in Matematica e Informatica, Universita Internazionale di Valencia (VIU) - In attesa di progetto finale">
+</a-entity>
+
+<a-entity position="-0.3 2.26 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: 2014">
+</a-entity>
+  
+<a-entity position="0 2.2 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Ingegneria Tecnica Industriale in Elettronica Industriale, Scuola di Ingegneria di Tarragona ">
+</a-entity>
+
+<a-entity position="0 1.75 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Titolo del progetto finale: Modello Pspice di Sensori Basato su Metallo Ossido Nanofiglio">
+</a-entity>
+
+<!-- Addestramento supplementare -->
+  
+<a-entity id="color" position="4 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: ADDESTRAMENTO SUPPLEMENTARE; width: 3.5">
+</a-entity>
+
+<a-entity position="4 3.075 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: 2020-21">
+</a-entity>                                                          
+
+<a-entity position="4 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: DIPARTIMENTO DI FORMAZIONE DELLA GENERALITAT DI CATALOGNA ">
+</a-entity>
+                                                                                                                          
+<a-entity position="4 2.3 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Introduzione alla programmazione di videogiochi con Unity, 70h">
+</a-entity>
+
+<a-entity position="4 1.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Formazione per insegnanti di livello intermedio. Educazione secondaria, 30h">
+</a-entity>
+
+<a-entity position="4 1.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: E-learning e scuola: modelli pedagogici, Google classroom, Moodle, Mooc, Gioco serio e realta aumentata, 30h">
+</a-entity>
+                                                                                                     
+<a-entity position="4 1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Come impariamo. Un breve approccio scientifico all'apprendimento, 15h">
+</a-entity>
+                                                                                                        
+<a-entity position="4 0.6 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Aggiornamento delle competenze di COMPETIC2 (2a Ed.), 15h">
+</a-entity>
+                                                                                       
+<a-entity position="4 0.3 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Competenza digitale iniziale, 30h">
+</a-entity>
+                                                                              
+<a-entity position="4 0 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Scopri gli strumenti STEAM, 15h">
+</a-entity>
+
+<a-entity position="8 3.075 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: 2020">
+</a-entity>                                                          
+
+<a-entity position="8 2.7 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: FONDAZIONE DI LAVORO AUTONOMO DI CATALOGNA">
+</a-entity>
+                                                                                    
+<a-entity position="8 2.35 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Presentazioni tecniche orali in inglese, 30h">
+</a-entity>
+
+<a-entity position="8 2.1 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: E-commercio e negozio virtuale, 45h">
+</a-entity>
+     
+<!-- Informatica -->
+  
+<a-entity id="color" position="12 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: INFORMATICA; width: 3.5">
+</a-entity>                                                                                         
+                                              
+<a-entity position="11.7 3.13 0" geometry="primitive: plane; width: 2.5; height: 0.115" material="" text="width: 2.5; color: green; value: 2017">
+</a-entity>
+
+<a-entity position="12 3.075 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Corso di Data Science per l'attivita commerciale, la privacy e big data, IBM, 20h">
+</a-entity>           
+
+<a-entity position="11.7 2.72 0" geometry="primitive: plane; width: 2.5; height: 0.115" material="" text="width: 2.5; color: green; value: 2016">
+</a-entity>                                                                                                                                                                                                                                                                            
+                                                                                                                                       
+<a-entity position="12 2.6 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Corso di sicurezza informatica per micro-PMI e autonomo, Istituto nazionale di sicurezza informatica della Spagna (INCIBE), 30h">
+</a-entity>           
+
+<a-entity position="11.7 2.21 0" geometry="primitive: plane; width: 2.5; height: 0.115" material="" text="width: 2.5; color: green; value: 2015">
+</a-entity>
+
+<a-entity position="12 2.15 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Corso di programmazione e imprenditorialita, Cibernarium Barcelona, 120h">
+</a-entity>           
+
+<a-entity position="12 1.8 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: Programmazione ">
+</a-entity> 
+                                                                
+<a-entity position="12 1.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Python, Java, PHP, C/C++ e Visual Basic">
+</a-entity>           
+
+<a-entity position="12 1.2 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Android Studio, HTML5, CSS3, Bootstrap, Jquery, Javascript, XML, Drupal, Joomla, Wordpress">
+</a-entity>                                                                                 
+                                                                                                                      
+<a-entity position="12 0.8 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Programmazione di Applicazioni XR: Unity e A-Frame, sviluppo di attivita XR educative">
+</a-entity>                                                                                 
+                                                                                                                      
+<a-entity position="12 0.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: left; width: 2.5; color: green; value: Conoscenza avanzata di Windows 10 e Office365, Linux e Openoffice">
+</a-entity>                                                                                 
+                                                                                                                      
+<!-- Informazioni di contatto -->
+  
+<a-entity id="color" position="8 4.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: DADES DE CONTACTE; width: 3.5">
+</a-entity>
+
+<!-- Profilo insegnante -->
+  
+<a-entity id="color" position="16 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: PROFILO INSEGNANTE; width: 3.5">
+</a-entity>
+
+<a-entity position="16 3.075 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: 2019-2021">
+</a-entity>
+
+
+<a-entity position="16 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FFF"
+text="align: center; width: 2.5; color: green; value: ">
+</a-entity>
+
+                                                                
+<a-entity position="16 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Docente nel Dipartimento di Educazione della Generalitat di Catalogne specializzato in installazioni elettriche e Automatici (2 anni)">
+</a-entity>                                                                 
+                                                                 
+<!-- Profilo di programmatore -->
+  
+<a-entity id="color" position="20 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: PROFILO DI PROGRAMMATORE; width: 3.5">
+</a-entity>
+
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 100000" rotation="0 240 0" gltf-model="#classroom" scale="0.3 0.3 0.3" position="15 -3 0 " ></a-entity>
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#oq2_customized" scale="0.1 0.1 0.1" position="19 2.2 0 " ></a-entity>
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 0 0" gltf-model="#cyberpunk_laptop" scale="0.5 0.5 0.5" position="19 1 0 " ></a-entity>
+<a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" rotation="0 -200 0" gltf-model="#server_rack" scale="0.3 0.3 0.3" position="21 1 0 " ></a-entity>
+
+<a-entity position="20 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: ">
+</a-entity>
+
+<a-entity position="20 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: ">
+</a-entity>
+                                                                 
+<!-- Lingue -->
+  
+<a-entity id="color" position="24 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: LINGUE; width: 3.5">
+</a-entity>
+
+<a-entity position="24 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Catalano e inglese: alto">
+</a-entity>
+
+<a-entity position="24 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Francese: Medio">
+</a-entity>                                                                                                  
+                                                                 
+<!-- Altri dati -->
+  
+<a-entity id="color" position="28 3.5 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: ALTRI DATI; width: 3.5">
+</a-entity>
+  
+<a-entity position="28 2.9 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Licenza di guida B1">
+</a-entity>
+
+<a-entity position="28 2.5 0" geometry="primitive: plane; width: auto; height: auto" material="color: #FF0"
+text="align: center; width: 3; color: green; value: Propia macchina">
+</a-entity>
+                                                                                                                     
+<!-- Illuminazione  -->
+<a-entity light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0" position="-2.5 1.2 2.2"></a-entity>
+<a-entity light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0" position="-20 -7 -40"></a-entity>
+<a-entity light="type: ambient; color: #f4f4f4; intensity: 0.25;" position="-8 10 -18"></a-entity>
+</a-entity>
+
+<!-- Controlli per dispositivo XR  -->
+<a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
+<a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
+
+<!-- Posizione della telecamera  -->
+<a-entity position="3 2.2 4" camera look-controls wasd-controls></a-entity>
+</a-scene>
+</body>
+</html>
