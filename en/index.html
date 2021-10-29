@@ -43,7 +43,7 @@
     </a-entity>
     <a-entity
       body="type: static; shape: sphere; sphereRadius: 0.04;"
-      hand-controls="hand: left; handModelStyle: lowPoly; color: #8cbc9b"
+      hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab
       sphere-collider="objects: .throwable"
       grab
       teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
@@ -52,7 +52,7 @@
     ></a-entity>
     <a-entity
       body="type: static; shape: sphere; sphereRadius: 0.04;"
-      hand-controls="hand: right; handModelStyle: lowPoly; color: #8cbc9b"
+      hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab
       sphere-collider="objects: .throwable"
       grab
       teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
@@ -294,9 +294,7 @@ text="align: center; width: 3; color: green; value: Possibility to work remotely
 <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.25;" position="-8 10 -18"></a-entity>
 </a-entity>
 
-<!-- XR Device controls -->
-<a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
-<a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
+
 
 </a-scene>
 </body>
