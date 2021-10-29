@@ -10,7 +10,11 @@
 <script src="../blasllavero/components/aabb-collider.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
 <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
+<script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
+<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 
 </head>
 
@@ -19,11 +23,48 @@
     <a-assets>
       <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
       <a-asset-item id="oq2_customized"  src="../blasllavero/assets/oculus_quest_2_customized_steve_addition/scene.gltf"></a-asset-item>
-      <a-asset-item id="classroom"  src="../blasllavero/assets/auiv_classroom/scene.gltf"></a-asset-item>
+      <a-asset-item id="classroom"  src="../blasllavero/assets/auiv_classroom/scene.gltf"></a-asset-item> -->
       <a-asset-item id="cyberpunk_laptop"  src="../blasllavero/assets/cyberpunk_laptop/scene.gltf"></a-asset-item>
       <a-asset-item id="server_rack"  src="../blasllavero/assets/server_rack_and_console_v3/scene.gltf"></a-asset-item>
     </a-assets>
 
+
+    <!-- Player rig -->
+    <a-entity
+    id="rig"
+    movement-controls="constrainToNavMesh: true; speed: 0.15;"
+  >
+    <a-entity
+      id="head"
+      camera="far: 40; active: true"
+      position="4 2.2 3"
+      look-controls="pointerLockEnabled: true"
+    >
+    </a-entity>
+    <a-entity
+      body="type: static; shape: sphere; sphereRadius: 0.04;"
+      hand-controls="hand: left; handModelStyle: lowPoly; color: #8cbc9b"
+      sphere-collider="objects: .throwable"
+      grab
+      teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+      hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
+      curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
+    ></a-entity>
+    <a-entity
+      body="type: static; shape: sphere; sphereRadius: 0.04;"
+      hand-controls="hand: right; handModelStyle: lowPoly; color: #8cbc9b"
+      sphere-collider="objects: .throwable"
+      grab
+      teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+      hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
+      curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
+    ></a-entity>
+  </a-entity>
+
+
+<!--    Link to second page   -->
+<a-entity link="href: second.html; title: Second Page; image: https://cdn.glitch.com/24167fff-9e06-4c7b-83ba-373ddf6ff50b%2Fsnowtexture.jpg?1552663196626" position="4.05659 3 0"></a-entity>
+      
 <!-- Environment -->
 <!-- <a-entity environment="preset: forest; dressingAmount: 500"></a-entity> -->
 
@@ -169,7 +210,7 @@ text="align: left; width: 2.5; color: green; value: Advanced knowledge of Window
   
 <a-entity id="color" position="8 4.5 0"
 animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
-text="color: green; align: center; value: CONCTACT INFORMATION; width: 3.5">
+text="color: green; align: center; value: CONTACT INFORMATION; width: 3.5">
 </a-entity>
 
 <!-- Teacher profile  -->
@@ -257,8 +298,6 @@ text="align: center; width: 3; color: green; value: Possibility to work remotely
 <a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
 <a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
 
-<!-- Camera position -->
-<a-entity position="3 2.2 4" camera look-controls wasd-controls></a-entity>
 </a-scene>
 </body>
 </html>
