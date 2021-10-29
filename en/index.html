@@ -27,8 +27,7 @@
       <a-asset-item id="cyberpunk_laptop"  src="../blasllavero/assets/cyberpunk_laptop/scene.gltf"></a-asset-item>
       <a-asset-item id="server_rack"  src="../blasllavero/assets/server_rack_and_console_v3/scene.gltf"></a-asset-item>
     </a-assets>
-
-
+   
     <!-- Player rig -->
     <a-entity
     id="rig"
@@ -37,13 +36,13 @@
     <a-entity
       id="head"
       camera="far: 40; active: true"
-      position="4 2.2 6"
+      position="4 2.2 5"
       look-controls="pointerLockEnabled: true"
     >
     </a-entity>
     <a-entity
       body="type: static; shape: sphere; sphereRadius: 0.04;"
-      hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab
+      hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
       sphere-collider="objects: .throwable"
       grab
       teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
@@ -52,7 +51,7 @@
     ></a-entity>
     <a-entity
       body="type: static; shape: sphere; sphereRadius: 0.04;"
-      hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab
+      hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
       sphere-collider="objects: .throwable"
       grab
       teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
@@ -60,14 +59,7 @@
       curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
     ></a-entity>
   </a-entity>
-
-
-<!--    Link to second page   -->
-<a-entity link="href: second.html; title: Second Page; image: https://cdn.glitch.com/24167fff-9e06-4c7b-83ba-373ddf6ff50b%2Fsnowtexture.jpg?1552663196626" position="4.05659 3 0"></a-entity>
-      
-<!-- Environment -->
-<!-- <a-entity environment="preset: forest; dressingAmount: 500"></a-entity> -->
-
+    
 <!-- Name -->
 <a-entity id="color" position="4 4.1 0"
 animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
@@ -293,8 +285,6 @@ text="align: center; width: 3; color: green; value: Possibility to work remotely
 <a-entity light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0" position="-20 -7 -40"></a-entity>
 <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.25;" position="-8 10 -18"></a-entity>
 </a-entity>
-
-
 
 </a-scene>
 </body>
