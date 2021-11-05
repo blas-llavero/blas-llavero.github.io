@@ -8,6 +8,7 @@
 
 <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 <script src="../blasllavero/components/aabb-collider.js"></script>
+<script src="../blasllavero/components/info-message.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
 <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
@@ -19,8 +20,9 @@
 </head>
 
 <body>
-<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
+  <a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;" info-message="htmlSrc: #messageText">
     <a-assets>
+      <a-asset-item id="messageText" src="message.html"></a-asset-item>
       <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
       <a-asset-item id="oq2_customized"  src="../blasllavero/assets/oculus_quest_2_customized_steve_addition/scene.gltf"></a-asset-item>
       <a-asset-item id="classroom"  src="../blasllavero/assets/auiv_classroom/scene.gltf"></a-asset-item>
@@ -198,13 +200,6 @@ text="align: left; width: 2.5; color: green; value: XR-Anwendungsprogrammierung:
 text="align: left; width: 2.5; color: green; value: Fortgeschrittene Kenntnisse in Windows 10, Office365, Linux und Openoffice">
 </a-entity>                                                                                 
                                                                                                                       
-<!-- Kontaktdaten -->
-  
-<a-entity id="color" position="8 4.5 0"
-animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
-text="color: green; align: center; value: KONTAKTDATEN; width: 3.5">
-</a-entity>
-
 <!-- Dozenterprofil -->
   
 <a-entity id="color" position="16 3.5 0"
