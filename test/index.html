@@ -55,11 +55,19 @@ SOFTWARE.
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 
 <!-- Controles de teletransporte de aframe - https://github.com/fernandojsg/aframe-teleport-controls - Licencia: https://github.com/fernandojsg/aframe-teleport-controls/blob/master/LICENSE -->
+
+
+<!--
+
 <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+
+physics="debug: false; friction: 0.01; restitution: 0.3; iterations: 10"
+-->
+
 </head>
 
 <body>
-<a-scene physics="debug: false; friction: 0.01; restitution: 0.3; iterations: 10" renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
+<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
     <a-assets>
 
     <!-- "Arrow" (https://skfb.ly/6BYMS) de Jakob Henerey esta licenciado bajo la Atribucion Creative Commons (http://creativecommons.org/licenses/by/4.0/).-->
@@ -252,6 +260,8 @@ text="align: center; width: 2.5; color: green; value: Me encantan las matematica
 <a-entity position="-8.3068 0.5 10.82894" rotation="0 -41.8111 0" geometry="primitive: plane; width: 2.5; height: 0.577" material="" 
 text="align: center; width: 2.5; color: green; value: https://www.youtube.com/watch?v=HFIaqHZrykU - Licencia CC BY 3.0: https://creativecommons.org/licenses/by/3.0/">
 </a-entity>
+
+<a-sky position="0 0 9.138" radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: #24b59f; bottomColor: #eff9b7" visible="" geometry=""></a-sky>
 
 <!-- Instrucciones para la actividad 2 -->
 
