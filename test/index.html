@@ -1,3 +1,31 @@
+<!-- 
+Titulo: Realidad virtual en matematicas de 2º de ESO 
+Autor: Blas Llavero Ruiz
+Fecha: 2022
+Version de codigo: 1.0
+Licencia: Licencia MIT
+
+Copyright (c) 2022 Blas Llavero Ruiz
+
+Por la presente se concede permiso, sin cargo, a cualquier persona que obtenga una copia
+de este software y los archivos de documentacion asociados (el "Software"), para manejar
+el Software sin restricciones, incluidos, entre otros, los derechos
+usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender
+copias del Software, y para permitir a las personas a quienes se les ha
+provisto para hacerlo, sujeto a las siguientes condiciones:
+
+El aviso de derechos de autor anterior y este aviso de permiso se incluiran en todos
+copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTiA DE NINGuN TIPO, EXPRESA O
+IMPLiCITA, INCLUYENDO PERO NO LIMITADO A LAS GARANTiAS DE COMERCIABILIDAD,
+IDONEIDAD PARA UN PROPoSITO PARTICULAR Y NO INFRACCIoN. EN NINGuN CASO LOS 
+AUTORES O TITULARES DE LOS DERECHOS DE AUTOR SERaN RESPONSABLES DE CUALQUIER RECLAMACIoN, DAÑOS U OTRAS
+RESPONSABILIDADES, YA SEA EN UNA ACCIoN DE CONTRATO, AGRAVIO O DE OTRA FORMA, DERIVADA DE,
+FUERA DE O EN CONEXIoN CON EL SOFTWARE O EL USO U OTROS TRATOS CON EL
+SOFTWARE. 
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,13 +46,14 @@
 
 <body>
 <a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
+<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
     <a-assets>
 
     <!-- "Arrow" (https://skfb.ly/6BYMS) de Jakob Henerey esta licenciado bajo la Atribucion Creative Commons (http://creativecommons.org/licenses/by/4.0/).-->
     <a-asset-item id="arrow"  src="/test/assets/3d-models/arrow/scene.gltf"></a-asset-item>
 
-    <!-- "Medical Tent (Low Poly Style)" (https://skfb.ly/6RstW) de Tiko esta licenciado bajo la Atribucion Creative Commons (http://creativecommons.org/licenses/by/4.0/).
-    <a-asset-item id="medical-tent"  src="/test/assets/3d-models/medical-tent/scene.gltf"></a-asset-item> -->
+    <!-- "Medical Tent (Low Poly Style)" (https://skfb.ly/6RstW) de Tiko esta licenciado bajo la Atribucion Creative Commons (http://creativecommons.org/licenses/by/4.0/).-->
+    <a-asset-item id="medical-tent"  src="/test/assets/3d-models/medical-tent/scene.gltf"></a-asset-item>
 
     <!-- "Warehouse" (https://skfb.ly/6SxYp) de MRowa esta licenciado bajo la Atribucion Creative Commons-ShareAlike (http://creativecommons.org/licenses/by-sa/4.0/). --->
     <a-asset-item id="warehouse"  src="/test/assets/3d-models/warehouse/scene.gltf"></a-asset-item>
@@ -36,8 +65,8 @@ https://creativecommons.org/licenses/by/3.0/ -->
         src="/test/assets/audio/mediterranean-spring/mediterranean-spring.mp3">
       </audio>
 
-      <!-- Ajustes del color de los cubos, cuando se cogen cambian de color -->
-      <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
+    <!-- Ajustes del color de los cubos, cuando se cogen cambian de color -->
+    <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
     </a-assets>
 
     <!-- Inicio del sonido de fondo en una posicion concreta del escenario al cargar la pagina web -->
@@ -282,8 +311,8 @@ text="align: center; width: 2.5; color: green; value: https://www.youtube.com/wa
 </a-entity>
 
 
-<!-- Tienda con el material de la ayuda humanitaria 
-<a-entity position="-2.91086 0.3 -5.88546" rotation="0 0 0" gltf-model="/test/assets/3d-models/medical-tent/scene.gltf" scale="0.010 0.009 0.020"></a-entity> -->
+<!-- Tienda con el material de la ayuda humanitaria -->
+<a-entity position="-2.91086 0.3 -5.88546" rotation="0 0 0" gltf-model="/test/assets/3d-models/medical-tent/scene.gltf" scale="0.010 0.009 0.020"></a-entity>
 
 <!-- Almacen con los recipientes de agua para regar el terreno de cultivo -->
 <a-entity position="4.91086 0.3 -5.88546" rotation="0 0 0" gltf-model="/test/assets/3d-models/warehouse/scene.gltf" scale="0.0005 0.0015 0.0020"></a-entity>
@@ -544,7 +573,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
 
 <!-- Cubos dentro de la tienda medica -->
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 0">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Agua; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -561,7 +590,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Agua; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -0.75">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -0.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Lentejas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -578,7 +607,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Lentejas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -1.5">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -1.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Harina de maiz; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -595,7 +624,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Harina de maiz; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -2.25">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -2.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Arroz; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -612,7 +641,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Arroz; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -3">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Frijol; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -629,7 +658,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Frijol; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -3.75">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -3.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Pimienta negra; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -646,7 +675,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Pimienta negra; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -4.5">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -4.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cafe; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -663,7 +692,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Cafe; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -5.25">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -5.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Chocolate; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -680,7 +709,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Chocolate; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -6">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Aceite; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -697,7 +726,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Aceite; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -6.75">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -6.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Leche en polvo; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -714,7 +743,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Leche en polvo; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -7.5">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -7.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Bocadillo; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -731,7 +760,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Bocadillo; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -8.25">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -8.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Pasta; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -748,7 +777,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Pasta; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -9">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Atun; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -765,7 +794,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Atun; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -9.75">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -9.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Sopa instantanea; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -782,7 +811,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Sopa instantanea; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -10.5">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -10.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Conservas en Lata; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -799,7 +828,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Conservas en Lata; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -11.25">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -11.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Frutos secos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -816,7 +845,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Frutos secos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -12">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -12" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Barritas energeticas ; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -833,7 +862,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Barritas energeticas ; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -12.75">
+<a-entity class="cube" mixin="cube" position="-5.31433 0.585 -12.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Galletas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -850,7 +879,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Galletas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 0">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cinta adhesiva medica; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -867,7 +896,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Cinta adhesiva medica; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -0.75">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -0.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Vendas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -884,7 +913,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Vendas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -1.5">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -1.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Crema antibiotica; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -901,7 +930,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Crema antibiotica; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -2.25">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -2.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Alcohol medicinal; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -918,7 +947,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Alcohol medicinal; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -3">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Crema de hidrocortisona; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -935,7 +964,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Crema de hidrocortisona; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -3.75">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -3.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Paracetamol; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -952,7 +981,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Paracetamol; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -4.5">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -4.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Pinzas medicas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -969,7 +998,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Pinzas medicas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -5.25">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -5.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Tijeras medicas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -986,7 +1015,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Tijeras medicas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -6">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Guantes de plastico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1003,7 +1032,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Guantes de plastico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -6.75">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -6.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Termometro; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1020,7 +1049,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Termometro; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -7.5">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -7.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Mascarilla de reanimacion; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1037,7 +1066,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Mascarilla de reanimacion; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -8.25">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -8.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Antihistaminicos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1054,7 +1083,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Antihistaminicos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -9">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Termometro; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1071,7 +1100,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Termometro; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -9.75">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -9.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Sedantes; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1088,7 +1117,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Sedantes; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -10.5">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -10.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Parches antiquemaduras; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1105,7 +1134,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Parches antiquemaduras; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -11.25">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -11.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Botiquines medicos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1122,7 +1151,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Botiquines medicos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -12">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -12" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Antibioticos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1139,7 +1168,7 @@ text="align: center; width: 3; color: green; value: a) 2/4  b) 5/10  c) 5/8  d) 
   <a-entity scale="1 1 1" text="value: Antibioticos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -12.75">
+<a-entity class="cube" mixin="cube" position="-4.56433 0.585 -12.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Toallitas antisepticas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1257,7 +1286,7 @@ text="align: center; width: 3; color: yellow; value: a) 933,89 l.  b) 434,53 l. 
 <a-entity position="12.59415  1.4 -17.36889" geometry="primitive: plane; width: 3; height: 1" material="color: blue" 
 text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l." rotation="0 -90 0"></a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 0">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Ollas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1274,7 +1303,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Ollas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -0.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -0.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Paellas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1291,7 +1320,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Paellas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -1.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -1.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Platos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1308,7 +1337,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Platos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -2.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -2.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Chocolateras; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1325,7 +1354,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Chocolateras; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -3">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Plato hondo plast.; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1342,7 +1371,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Plato hondo plast.; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -3.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -3.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cucharas de plastico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1359,7 +1388,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Cucharas de plastico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -4.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -4.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Vajilla de metal; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1376,7 +1405,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Vajilla de metal; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -5.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -5.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Vajilla desechable; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1393,7 +1422,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Vajilla desechable; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -6">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Papel de cocina; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1410,7 +1439,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Papel de cocina; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -6.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -6.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Vasos de plastico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1427,7 +1456,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Vasos de plastico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -7.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -7.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Tenedores de plastico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1444,7 +1473,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Tenedores de plastico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -8.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -8.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Tazones; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1461,7 +1490,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Tazones; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -9">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cuchillos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1478,7 +1507,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Cuchillos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -9.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -9.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cacerolas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1495,7 +1524,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Cacerolas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -10.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -10.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Espatulas de cocina; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1512,7 +1541,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Espatulas de cocina; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -11.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -11.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cajas de cerillas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1529,7 +1558,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Cajas de cerillas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -12">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -12" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Coladores; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1546,7 +1575,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Coladores; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -12.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-1.48 0.58 -12.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Bandejas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1563,7 +1592,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Bandejas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 0">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Generadores solares; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1580,7 +1609,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Generadores solares; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -0.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -0.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Filtros de agua; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1597,7 +1626,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Filtros de agua; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -1.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -1.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Baterias recargables; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1614,7 +1643,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Baterias recargables; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -2.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -2.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Paneles solares; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1631,7 +1660,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Paneles solares; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -3">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Calentadores de agua; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1648,7 +1677,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Calentadores de agua; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -3.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -3.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Depositos de agua; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1665,7 +1694,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Depositos de agua; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -4.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -4.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Linternas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1682,7 +1711,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Linternas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -5.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -5.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Anzuelos de pesca; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1699,7 +1728,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Anzuelos de pesca; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -6">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Sedales de pescar; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1716,7 +1745,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Sedales de pescar; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -6.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -6.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Agujas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1733,7 +1762,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Agujas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -7.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -7.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Iniciadores de fuego; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1750,7 +1779,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Iniciadores de fuego; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -8.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -8.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Silvatos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1767,7 +1796,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Silvatos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -9">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Palos luminosos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1784,7 +1813,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Palos luminosos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -9.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -9.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Abrelatas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1801,7 +1830,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Abrelatas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -10.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -10.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Imperdibles; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1818,7 +1847,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Imperdibles; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -11.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -11.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Sierras de hilo; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1835,7 +1864,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Sierras de hilo; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -12">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -12" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Brujulas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1852,7 +1881,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Brujulas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -12.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-0.78 0.58 -12.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Clips; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1869,7 +1898,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Clips; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -12.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -12.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Gel antibacterial; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1886,7 +1915,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Gel antibacterial; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -12">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -12" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Dentrificos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1903,7 +1932,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Dentrificos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -11.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -11.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cepillos dentales; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1920,7 +1949,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Cepillos dentales; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -10.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -10.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Jabon ducha en sobre; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1937,7 +1966,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Jabon ducha en sobre; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -9.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -9.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Paquetes toallas higienicas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1954,7 +1983,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Paquetes toallas higienicas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -9">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Maquinas de afeitar; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1971,7 +2000,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Maquinas de afeitar; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -8.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -8.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Toallas de algodon; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -1988,7 +2017,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Toallas de algodon; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -7.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -7.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Peines de plastico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2005,7 +2034,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Peines de plastico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -6.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -6.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Toallas sanitarias; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2022,7 +2051,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Toallas sanitarias; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -6">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Servilletas humedas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2039,7 +2068,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Servilletas humedas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -5.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -5.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Mascarillas; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2056,7 +2085,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Mascarillas; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -4.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -4.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Kits de higiene; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2073,7 +2102,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Kits de higiene; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -3.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -3.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Papel higienico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2090,7 +2119,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Papel higienico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -3">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Gel hidroalcoholico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2107,7 +2136,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Gel hidroalcoholico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -2.25">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -2.25" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Papel higienico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2124,7 +2153,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Papel higienico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -1.5">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -1.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Papel higienico; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2141,7 +2170,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Papel higienico; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -0.75">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 -0.75" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Jabon de manos; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2158,7 +2187,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
   <a-entity scale="1 1 1" text="value: Jabon de manos; color: black" rotation="0 180 0" position="-0.4 0 -0.4"></a-entity> 
 </a-entity>
 
-<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 0">
+<a-entity class="cube" mixin="cube" rotation="0 180 0" position="-2.23 0.58 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   <!-- central -->
   <a-entity scale="1 1 1" text="value: Cepillos de pelo; color: black" rotation="0 0 0" position="0.4 0 0.4"></a-entity>
 
@@ -2180,7 +2209,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cono + Cilindro 1 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 0">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Cilindro -->
   <a-cone color="yellow" rotation="0 0 0" position="0 0.9 0" scale="0.2 0.2 0.2" radius-bottom="1" radius-top="1"></a-cone>
@@ -2212,7 +2241,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cono + Cilindro 2 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -0.7">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -0.7" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Cilindro -->
   <a-cone color="green" rotation="0 0 0" position="0 0.9 0" scale="0.2 0.2 0.2" radius-bottom="1" radius-top="1"></a-cone>
@@ -2244,7 +2273,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cono + Cilindro 3 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -1.4">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -1.4" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Cilindro -->
   <a-cone color="cyan" rotation="0 0 0" position="0 0.9 0" scale="0.2 0.2 0.2" radius-bottom="1" radius-top="1"></a-cone>
@@ -2276,7 +2305,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cono + Cilindro 4 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -2.1">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -2.1" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Cilindro -->
   <a-cone color="white" rotation="0 0 0" position="0 0.9 0" scale="0.2 0.2 0.2" radius-bottom="1" radius-top="1"></a-cone>
@@ -2308,7 +2337,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cono + Cilindro 5 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -2.8">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -2.8" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Cilindro -->
   <a-cone color="orange" rotation="0 0 0" position="0 0.9 0" scale="0.2 0.2 0.2" radius-bottom="1" radius-top="1"></a-cone>
@@ -2340,7 +2369,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cubo + Piramide 1 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -3.5">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -3.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
     
   <!-- Cubo -->
   <a-box color="gold" rotation="0 10 0" position="0 0.9 0" scale="0.2 0.2 0.2" depth="1" height="1" width="1"></a-box>
@@ -2371,7 +2400,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cubo + Piramide 2 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -4.2">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -4.2" geometry="width: 0.75; height: 0.75; depth: 0.75;">
     
   <!-- Cubo -->
   <a-box color="greenyellow" rotation="0 10 0" position="0 0.9 0" scale="0.2 0.2 0.2" depth="1" height="1" width="1"></a-box>
@@ -2402,7 +2431,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cubo + Piramide 3 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -4.9">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -4.9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
     
   <!-- Cubo -->
   <a-box color="darkmagenta" rotation="0 10 0" position="0 0.9 0" scale="0.2 0.2 0.2" depth="1" height="1" width="1"></a-box>
@@ -2434,7 +2463,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cubo + Piramide 4 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -5.6">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -5.6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
     
   <!-- Cubo -->
   <a-box color="beige" rotation="0 10 0" position="0 0.9 0" scale="0.2 0.2 0.2" depth="1" height="1" width="1"></a-box>
@@ -2466,7 +2495,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Cubo + Piramide 5 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -6.3">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.225 0.825 -6.3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
     
   <!-- Cubo -->
   <a-box color="gold" rotation="0 10 0" position="0 0.9 0" scale="0.2 0.2 0.2" depth="1" height="1" width="1"></a-box>
@@ -2497,7 +2526,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Tronco de cono + Cilindro 1 --> 
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 0">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Tronco de Cono -->
   <a-cone color="royalblue" rotation="0 0 0" position="0 0.7 0" scale="0.2 0.2 0.2" radius-bottom="0.5" radius-top="1"></a-cone>
@@ -2529,7 +2558,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Tronco de cono + Cilindro 2 --> 
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -0.7">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -0.7" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Tronco de Cono -->
   <a-cone color="deeppink" rotation="0 0 0" position="0 0.7 0" scale="0.2 0.2 0.2" radius-bottom="0.5" radius-top="1"></a-cone>
@@ -2561,7 +2590,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Tronco de cono + Cilindro 3 --> 
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -1.4">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -1.4" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Tronco de Cono -->
   <a-cone color="darkred" rotation="0 0 0" position="0 0.7 0" scale="0.2 0.2 0.2" radius-bottom="0.5" radius-top="1"></a-cone>
@@ -2593,7 +2622,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Tronco de cono + Cilindro 4 --> 
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -2.1">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -2.1" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Tronco de Cono -->
   <a-cone color="darkseagreen" rotation="0 0 0" position="0 0.7 0" scale="0.2 0.2 0.2" radius-bottom="0.5" radius-top="1"></a-cone>
@@ -2625,7 +2654,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Tronco de cono + Cilindro 5 --> 
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -2.8">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -2.8" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Tronco de Cono -->
   <a-cone color="coral" rotation="0 0 0" position="0 0.7 0" scale="0.2 0.2 0.2" radius-bottom="0.5" radius-top="1"></a-cone>
@@ -2657,7 +2686,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Octaedro 1 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -3.5">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -3.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Octaedro -->
   <a-octahedron color="darkturquoise" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-octahedron>
@@ -2682,7 +2711,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Octaedro 2 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -4.2">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -4.2" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Octaedro -->
   <a-octahedron color="firebrick" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-octahedron>
@@ -2707,7 +2736,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Octaedro 3 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -4.9">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -4.9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Octaedro -->
   <a-octahedron color="darkviolet" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-octahedron>
@@ -2732,7 +2761,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Octaedro 4 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -5.6">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -5.6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Octaedro -->
   <a-octahedron color="lime" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-octahedron>
@@ -2757,7 +2786,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Octaedro 5 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -6.3">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="3.925 0.825 -6.3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
   
   <!-- Octaedro -->
   <a-octahedron color="seashell" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-octahedron>
@@ -2782,7 +2811,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Semiesfera + Cilindro 1 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 0">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 0" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Semiesfera -->
   <a-sphere color="darkkhaki" rotation="90 0 -180" position="0 0.7 0" scale="0.2 0.2 0.2" phi-length=180 phi-start=0></a-sphere>
@@ -2813,7 +2842,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Semiesfera + Cilindro 2 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -0.7">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -0.7" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Semiesfera -->
   <a-sphere color="salmon" rotation="90 0 -180" position="0 0.7 0" scale="0.2 0.2 0.2" phi-length=180 phi-start=0></a-sphere>
@@ -2844,7 +2873,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Semiesfera + Cilindro 3 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -1.4">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -1.4" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Semiesfera -->
   <a-sphere color="seagreen" rotation="90 0 -180" position="0 0.7 0" scale="0.2 0.2 0.2" phi-length=180 phi-start=0></a-sphere>
@@ -2875,7 +2904,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Semiesfera + Cilindro 4 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -2.1">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -2.1" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Semiesfera -->
   <a-sphere color="chocolate" rotation="90 0 -180" position="0 0.7 0" scale="0.2 0.2 0.2" phi-length=180 phi-start=0></a-sphere>
@@ -2906,7 +2935,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Semiesfera + Cilindro 5 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -2.8">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -2.8" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Semiesfera -->
   <a-sphere color="dodgerblue" rotation="90 0 -180" position="0 0.7 0" scale="0.2 0.2 0.2" phi-length=180 phi-start=0></a-sphere>
@@ -2937,7 +2966,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Dodecaedro 1 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -3.5">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -3.5" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Dodecaedro -->
   <a-dodecahedron color="rosybrown" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-dodecahedron>
@@ -2960,7 +2989,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Dodecaedro 2 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -4.2">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -4.2" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Dodecaedro -->
   <a-dodecahedron color="powderblue" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-dodecahedron>
@@ -2983,7 +3012,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Dodecaedro 3 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -4.9">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -4.9" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Dodecaedro -->
   <a-dodecahedron color="olive" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-dodecahedron>
@@ -3006,7 +3035,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Dodecaedro 4 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -5.6">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -5.6" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Dodecaedro -->
   <a-dodecahedron color="deepskyblue" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-dodecahedron>
@@ -3029,7 +3058,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 <!-- Dodecaedro 5 -->
 
 <!-- Cubo que sirve de base para la figura que incluye los parametros para calcular su volumen -->
-<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -6.3">
+<a-entity class="cube" mixin="cube" rotation="0 0 0" position="4.625 0.825 -6.3" geometry="width: 0.75; height: 0.75; depth: 0.75;">
 
   <!-- Dodecaedro -->
   <a-dodecahedron color="lemonchiffon" rotation="0 0 0" position="0 0.8 0" scale="0.1 0.1 0.1" radius="3"></a-dodecahedron>
@@ -3089,8 +3118,8 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
 </a-entity>
 
 <!-- Controles para dispositivo XR -->
-<a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
-<a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab></a-entity>
+<a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
+<a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
 
 <!-- Posicion de la camara a una altura de media del ojo humano que para la clase de 2do de matematicas es de 1.5 m -->
 <a-entity position="0 1.5 0" camera look-controls wasd-controls></a-entity>
@@ -3098,4 +3127,3 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
 </a-scene>
 </body>
 </html>
-
