@@ -1,70 +1,19 @@
-<!-- 
-Titulo: Realidad virtual en matematicas de 2º de ESO 
-Autor: Blas Llavero Ruiz
-Fecha: 2022
-Version de codigo: 1.0
-Licencia: Licencia MIT
-
-Copyright (c) 2022 Blas Llavero Ruiz
-
-Por la presente se concede permiso, sin cargo, a cualquier persona que obtenga una copia
-de este software y los archivos de documentacion asociados (el "Software"), para manejar
-el Software sin restricciones, incluidos, entre otros, los derechos
-usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender
-copias del Software, y para permitir a las personas a quienes se les ha
-provisto para hacerlo, sujeto a las siguientes condiciones:
-
-El aviso de derechos de autor anterior y este aviso de permiso se incluiran en todos
-copias o partes sustanciales del Software.
-
-EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTiA DE NINGuN TIPO, EXPRESA O
-IMPLiCITA, INCLUYENDO PERO NO LIMITADO A LAS GARANTiAS DE COMERCIABILIDAD,
-IDONEIDAD PARA UN PROPoSITO PARTICULAR Y NO INFRACCIoN. EN NINGuN CASO LOS 
-AUTORES O TITULARES DE LOS DERECHOS DE AUTOR SERaN RESPONSABLES DE CUALQUIER RECLAMACIoN, DAÑOS U OTRAS
-RESPONSABILIDADES, YA SEA EN UNA ACCIoN DE CONTRATO, AGRAVIO O DE OTRA FORMA, DERIVADA DE,
-FUERA DE O EN CONEXIoN CON EL SOFTWARE O EL USO U OTROS TRATOS CON EL
-SOFTWARE. 
--->
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Realidad Virtual en Matematicas de 2º de ESO</title>
-  <META NAME="keywords" CONTENT="realidad virtual, rv, educacion, matematicas, 2º ESO, virtual reality, vr, education, mathematics">
-  <META CHARSET="utf-8">
-  <META NAME="description" CONTENT="Realidad Virtual en Matematicas de 2do de ESO - A-Frame">
-  <META NAME="abstract" CONTENT="abstraccion">
-  <META HTTP-EQUIV="Content-Language" CONTENT="ES-ES">
-  <META NAME="author" CONTENT="Blas Llavero Ruiz">
-  <META NAME="distribution" CONTENT="Global">
-  <META NAME="copyright" CONTENT="Licencia MIT">
-  <META NAME="robots" CONTENT="FOLLOW,INDEX">
-
-<!-- Programas utilizados -->
-
-<!-- Marco de programacion aframe -  https://github.com/supermedium/aframe - Licencia MIT: https://github.com/aframevr/aframe/blob/master/LICENSE -->
+<meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-07-28" content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+<meta charset="utf-8">
+<title>Sistemas de Ecuaciones Lineales</title>
+<meta name="description" content="Sistemas de ecuaciones lineales – A-Frame">
 <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-
-<!-- Componente de ajuste de eventos - https://github.com/supermedium/superframe/tree/master/components/event-set/ - Licencia MIT: https://github.com/supermedium/superframe/blob/master/LICENSE -->
-<script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
-
-<!-- Componente de entorno ambiental para aframe - https://github.com/supermedium/aframe-environment-component - Licencia MIT: https://github.com/supermedium/aframe-environment-component/blob/master/LICENSE -->
-<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-
-<!-- Complementos y asistentes para A-Frame VR. Incluye componentes para controles, cargadores de modelos y mas - https://github.com/n5ro/aframe-extras - Licencia MIT: https://github.com/n5ro/aframe-extras/blob/master/LICENSE -->
-<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-
-<!-- Controles de teletransporte de aframe - https://github.com/fernandojsg/aframe-teleport-controls - Licencia: https://github.com/fernandojsg/aframe-teleport-controls/blob/master/LICENSE -->
-
+<script src="components/play-on-click.js"></script>
+<script src="components/hide-on-play.js"></script>
 <script src="components/aabb-collider.js"></script>
 <script src="components/grab.js"></script>
-<!--
-
-<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
-
-physics="debug: false; friction: 0.01; restitution: 0.3; iterations: 10"
--->
-
+<script src="components/ground.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 </head>
 
 <body>
@@ -87,8 +36,8 @@ https://creativecommons.org/licenses/by/3.0/ -->
         src="/test/assets/audio/mediterranean-spring/mediterranean-spring.mp3">
       </audio>
 
-    <!-- Ajustes del color de los cubos, cuando se cogen cambian de color -->
-    <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
+      <!-- Ajustes del color de los cubos, cuando se cogen cambian de color -->
+      <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
     </a-assets>
 
     <!-- Inicio del sonido de fondo en una posicion concreta del escenario al cargar la pagina web -->
