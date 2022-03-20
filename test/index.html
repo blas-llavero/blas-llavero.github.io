@@ -3127,8 +3127,8 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
   <a-entity id="head" camera wasd-controls look-controls ></a-entity>
 
   <!-- Controles para dispositivo XR -->
-  <a-entity id="left-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; collisionEntities: .environmentGround .environmentDressing"></a-entity>
-  <a-entity id="right-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; collisionEntities: .environmentGround .environmentDressing"></a-entity>
+  <a-entity id="left-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .environmentGround .environmentDressing"></a-entity>
+  <a-entity id="right-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .environmentGround .environmentDressing"></a-entity>
 <!-- 
   <a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
   <a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
