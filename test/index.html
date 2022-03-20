@@ -79,6 +79,40 @@ https://creativecommons.org/licenses/by/3.0/ -->
 <!-- Carga del entorno ambiental de bosque con 500 arboles -->
 <a-entity environment="preset: forest; dressingAmount: 500" position="0 0 -24.614"></a-entity>
 
+  <!-- Player rig -->
+  <a-entity
+  id="rig"
+  movement-controls="constrainToNavMesh: true; speed: 0.15;"
+  >
+  <a-entity
+    id="head"
+    camera="far: 40; active: true"
+    position="4 2.2 5"
+    look-controls="pointerLockEnabled: true"
+  >
+  </a-entity>
+  <a-entity
+    body="type: static; shape: sphere; sphereRadius: 0.04;"
+    hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
+    sphere-collider="objects: .throwable"
+    aabb-collider="objects: .cube;"
+    grab
+    teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+    hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
+    curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
+  ></a-entity>
+  <a-entity
+    body="type: static; shape: sphere; sphereRadius: 0.04;"
+    hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
+    sphere-collider="objects: .throwable"
+    aabb-collider="objects: .cube;"
+    grab
+    teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+    hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
+    curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
+  ></a-entity>
+  </a-entity>
+
 <!-- Portada de la Aplicacion de Realidad Virtual en Matematicas de 2º de ESO -->
 
 <a-entity id="color" position="0 7.5 -8"
@@ -3126,10 +3160,9 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
 
   <a-entity id="head" camera wasd-controls look-controls ></a-entity>
 
-  <!-- Controles para dispositivo XR -->
+  <!-- Controles para dispositivo XR 
   <a-entity id="left-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .environmentGround .environmentDressing"></a-entity>
   <a-entity id="right-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .environmentGround .environmentDressing"></a-entity>
-<!-- 
   <a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
   <a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
 -->
