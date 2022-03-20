@@ -39,11 +39,20 @@ FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U OTROS TRATOS CON EL SOFTWARE.
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v$npm_package_version/dist/aframe-physics-system.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.slim.js"></script>
+<script src="/easyrtc/easyrtc.js"></script>
+<script src="https://unpkg.com/networked-aframe@^0.9.0/dist/networked-aframe.min.js"></script>
+
 </head>
 
 <body>
-<a-scene physics="gravity:-9.8; debug: true" renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 200;">
+<a-scene networked-scene physics="gravity:-9.8" renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 200;">
     <a-assets>
+
+    <!-- Avatar para el usuario -->
+    <template id="avatar-template">
+      <a-sphere></a-sphere>
+    </template>
 
     <!-- "Arrow" (https://skfb.ly/6BYMS) de Jakob Henerey esta licenciado bajo la Atribucion Creative Commons (http://creativecommons.org/licenses/by/4.0/).-->
     <a-asset-item id="arrow"  src="/test/assets/3d-models/arrow/scene.gltf"></a-asset-item>
@@ -85,11 +94,12 @@ https://creativecommons.org/licenses/by/3.0/ -->
   movement-controls="constrainToNavMesh: true; speed: 0.15;"
   >
   <a-entity
-    id="head"
+    id="player"
+    networked="template:#avatar-template;attachTemplateToLocal:false;"
     camera="far: 200; active: true"
+    wasd-controls
     position="0 1.5 0"
-    look-controls="pointerLockEnabled: true"
-  >
+    look-controls="pointerLockEnabled: true">
   </a-entity>
   <a-entity
     body="type: static; shape: sphere; sphereRadius: 0.04;"
@@ -97,7 +107,7 @@ https://creativecommons.org/licenses/by/3.0/ -->
     sphere-collider="objects: .throwable"
     aabb-collider="objects: .cube;"
     grab
-    teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+    teleport-controls="cameraRig: #rig; teleportOrigin: #player; button: trigger; collisionEntities: #navmesh; 
     hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
     curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
   ></a-entity>
@@ -107,7 +117,7 @@ https://creativecommons.org/licenses/by/3.0/ -->
     sphere-collider="objects: .throwable"
     aabb-collider="objects: .cube;"
     grab
-    teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+    teleport-controls="cameraRig: #rig; teleportOrigin: #player; button: trigger; collisionEntities: #navmesh; 
     hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
     curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
   ></a-entity>
@@ -3152,10 +3162,6 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
 <a-entity light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0" position="-2.5 1.2 2.2"></a-entity>
 <a-entity light="type: point; color: #f4f4f4; intensity: 0.1; distance: 0" position="-20 -7 -40"></a-entity>
 <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.25;" position="-8 10 -18"></a-entity>
-</a-entity>
-
-  <!-- Camara -->
-  <a-entity id="head" camera wasd-controls look-controls ></a-entity>
 
   <!-- Controles para dispositivo XR 
   <a-entity id="left-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; collisionEntities: .environmentGround .environmentDressing"></a-entity>
@@ -3163,8 +3169,6 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
   <a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
   <a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
 -->
-</a-entity>
-
 </a-scene>
 </body>
 </html>
