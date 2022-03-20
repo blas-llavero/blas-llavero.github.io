@@ -297,14 +297,14 @@ text="align: center; width: 2.5; color: green; value: https://classroom.google.c
 </a-entity>
 
 
-<a-entity position="15.31845 4 -8.23169" rotation="0 -41.8111 0" geometry="primitive: plane; width: 2.5; height: 0.577" material="" text="align: center; width: 2.5; color: green; value: Para completar la actividad los alumnos pueden consultar el siguiente material de apoyo:">
+<a-entity position="15.31845 4 -10.23169" rotation="0 -41.8111 0" geometry="primitive: plane; width: 2.5; height: 0.577" material="" text="align: center; width: 2.5; color: green; value: Para completar la actividad los alumnos pueden consultar el siguiente material de apoyo:">
 </a-entity>
 
-<a-entity position="15.31845 3.5 -8.23169" rotation="0 -41.8111 0" geometry="primitive: plane; width: 2.5; height: 0.577" material="" 
+<a-entity position="15.31845 3.5 -10.23169" rotation="0 -41.8111 0" geometry="primitive: plane; width: 2.5; height: 0.577" material="" 
 text="align: center; width: 2.5; color: green; value: 2ESO Cuerpos Geometricos. Poliedros regulares. (2020, 1 septiembre). [Video]. YouTube.">
 </a-entity>
 
-<a-entity position="15.31845 3 -8.23169" rotation="0 -41.8111 0" geometry="primitive: plane; width: 2.5; height: 0.577" material="" 
+<a-entity position="15.31845 3 -10.23169" rotation="0 -41.8111 0" geometry="primitive: plane; width: 2.5; height: 0.577" material="" 
 text="align: center; width: 2.5; color: green; value: https://www.youtube.com/watch?v=U9y1LqhTZ7s   Licencia CC BY 3.0: https://creativecommons.org/licenses/by/3.0/">
 </a-entity>
 
@@ -3120,12 +3120,20 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
 <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.25;" position="-8 10 -18"></a-entity>
 </a-entity>
 
-<!-- Controles para dispositivo XR -->
-<a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
-<a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
 
-<!-- Posicion de la camara a una altura de media del ojo humano que para la clase de 2do de matematicas es de 1.5 m -->
-<a-entity id="head" camera wasd-controls look-controls ></a-entity>
+<a-entity id="cameraRig">
+  <!-- Camara a una altura de media del ojo humano que para la clase de 2do de matematicas es de 1.5 m -->
+
+  <a-entity id="head" camera wasd-controls look-controls ></a-entity>
+
+  <!-- Controles para dispositivo XR -->
+  <a-entity id="left-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; collisionEntities: .environmentGround .environmentDressing"></a-entity>
+  <a-entity id="right-hand" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; collisionEntities: .environmentGround .environmentDressing"></a-entity>
+<!-- 
+  <a-entity hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
+  <a-entity hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc" aabb-collider="objects: .cube;" grab teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh"></a-entity>
+-->
+</a-entity>
 
 </a-scene>
 </body>
