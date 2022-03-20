@@ -42,7 +42,7 @@ SOFTWARE.
 </head>
 
 <body>
-<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 200;">
+<a-scene physics="gravity:-9.8" renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 200;">
     <a-assets>
 
     <!-- "Arrow" (https://skfb.ly/6BYMS) de Jakob Henerey esta licenciado bajo la Atribucion Creative Commons (http://creativecommons.org/licenses/by/4.0/).-->
@@ -62,7 +62,7 @@ https://creativecommons.org/licenses/by/3.0/ -->
       </audio>
 
     <!-- Ajustes del color de los cubos, cuando se cogen cambian de color -->
-    <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
+    <a-mixin id="cube" dynamic-body event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
     </a-assets>
 
     <!-- Inicio del sonido de fondo en una posicion concreta del escenario al cargar la pagina web -->
@@ -3111,7 +3111,7 @@ text="align: center; width: 3; color: yellow; value: d) 329,87 l.  e) 491,07 l."
 
 <!--Entorno ambiental del suelo -->
 
-<a-entity rotation="-90 0 0" position="0 0 14.261" class="environmentGround environment" visible="" scale="1 1 4.18" shadow="cast: false; receive: false"></a-entity>
+<a-entity static-body rotation="-90 0 0" position="0 0 14.261" class="environmentGround environment" visible="" scale="1 1 4.18" shadow="cast: false; receive: false"></a-entity>
 
 <!-- Panel informativo de creditos-->
 
