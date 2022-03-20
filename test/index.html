@@ -80,14 +80,14 @@ https://creativecommons.org/licenses/by/3.0/ -->
 <a-entity environment="preset: forest; dressingAmount: 500" position="0 0 -24.614"></a-entity>
 
   <!-- Player rig -->
-  <a-entity
+   <!-- Camara a una altura de media del ojo humano que para la clase de 2do de matematicas es de 1.5 m -->  <a-entity
   id="rig"
   movement-controls="constrainToNavMesh: true; speed: 0.15;"
   >
   <a-entity
     id="head"
-    camera="far: 40; active: true"
-    position="4 2.2 5"
+    camera="far: 10; active: true"
+    position="0 1.5 0"
     look-controls="pointerLockEnabled: true"
   >
   </a-entity>
@@ -3154,10 +3154,7 @@ text="color: green; align: center; value: Marco de programacion A-frame (https:/
 <a-entity light="type: ambient; color: #f4f4f4; intensity: 0.25;" position="-8 10 -18"></a-entity>
 </a-entity>
 
-
-<a-entity id="cameraRig">
-  <!-- Camara a una altura de media del ojo humano que para la clase de 2do de matematicas es de 1.5 m -->
-
+  <!-- Camara -->
   <a-entity id="head" camera wasd-controls look-controls ></a-entity>
 
   <!-- Controles para dispositivo XR 
