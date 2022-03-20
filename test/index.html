@@ -42,7 +42,7 @@ SOFTWARE.
 </head>
 
 <body>
-<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;">
+<a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 200;">
     <a-assets>
 
     <!-- "Arrow" (https://skfb.ly/6BYMS) de Jakob Henerey esta licenciado bajo la Atribucion Creative Commons (http://creativecommons.org/licenses/by/4.0/).-->
@@ -86,7 +86,7 @@ https://creativecommons.org/licenses/by/3.0/ -->
   >
   <a-entity
     id="head"
-    camera="far: 10; active: true"
+    camera="far: 200; active: true"
     position="0 1.5 0"
     look-controls="pointerLockEnabled: true"
   >
@@ -342,8 +342,8 @@ text="align: center; width: 2.5; color: green; value: 2ESO Cuerpos Geometricos. 
 text="align: center; width: 2.5; color: green; value: https://www.youtube.com/watch?v=U9y1LqhTZ7s   Licencia CC BY 3.0: https://creativecommons.org/licenses/by/3.0/">
 </a-entity>
 
-<!-- Tienda con el material de la ayuda humanitaria 
-<a-entity position="-2.91086 0.3 -25.88546" rotation="0 0 0" gltf-model="/test/assets/3d-models/medical-tent/scene.gltf" scale="0.010 0.009 0.020"></a-entity> -->
+<!-- Tienda con el material de la ayuda humanitaria -->
+<a-entity position="-2.91086 0.3 -25.88546" rotation="0 0 0" gltf-model="/test/assets/3d-models/medical-tent/scene.gltf" scale="0.010 0.009 0.020"></a-entity> 
 
 <!-- Almacen con los recipientes de agua para regar el terreno de cultivo -->
 <a-entity position="4.91086 0.3 -25.88546" rotation="0 0 0" gltf-model="/test/assets/3d-models/warehouse/scene.gltf" scale="0.0005 0.0015 0.0020"></a-entity>
