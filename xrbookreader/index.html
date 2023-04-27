@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PDF Reader + Sketchfab Model Loader</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-mouse-cursor-component/dist/aframe-mouse-cursor-component.min.js"></script>
+    <script src="https://unpkg.com/pdfjs-dist/build/pdf.js"></script>
+    <script src="https://unpkg.com/@sketchfab/viewer-api@1.13.0/dist/viewer-api.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky color="#ECECEC"></a-sky>
+      
+      <a-entity id="cameraRig" position="0 1.6 0">
+        <a-camera look-controls wasd-controls>
+          <a-cursor></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <a-entity id="pdfPage" pdf-reader="src: PATH_TO_PDF"></a-entity>
+
+      <a-entity id="modelLoader" model-loader></a-entity>
+    </a-scene>
+
+    <script>
+      AFRAME.registerComponent('pdf-reader', {
+        schema: {
+          src: { type: 'string', default: '' }
+        },
+        init: function() {
+          const pdfPage = this.el;
+          const pdfSrc = this.data.src;
+
+          // Carregar el PDF
+          PDFJS.getDocument(pdfSrc).promise
+            .then(pdf => {
+              // Extracció de paraules clau de cada pàgina del PDF
+              const numPages = pdf.numPages;
+              for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                pdf.getPage(pageNum).then(page => {
+                  page.getTextContent().then(textContent => {
+                    const pageText = textContent.items.map(item => item.str).join(' ');
+
+                    // Detectar paraules clau desitjades
+                    const keywords = ['paraula1', 'paraula2', 'paraula3'];
+                    const extractedKeywords = [];
+                    for (const keyword of keywords) {
+                      if (pageText.includes(keyword)) {
+                        extractedKeywords.push(keyword);
+                      }
+                    }
+
+                    // Carregar el model 3D de Sketchfab per a cada paraula clau trobada
+                    if (extractedKeywords.length > 0) {
+                      const modelLoader = document.getElementById('modelLoader');
+                      const sketchfabURL = 'https://sketchfab.com/models/MODEL_ID/embed';
+
+                      for (const keyword of extractedKeywords) {
+                        const modelContainer = document.createElement('a-entity');
+                        modelContainer.setAttribute('position', '0 0 -5');
+                        modelContainer.setAttribute('model-loader', `src: ${sketchfabURL.replace('MODEL_ID', keyword)}`);
+                        modelLoader.appendChild(modelContainer);
+                        modelLoader.appendChild(modelContainer);
+                      }
+                    }
+                  });
+                });
+              }
+            })
+            .catch(error => console.log(error));
+        }
+      });
+
+      AFRAME.registerComponent('model-loader', {
+        schema: {
+          src: { type: 'string', default: '' }
+        },
+        init: function() {
+          const modelContainer = this.el;
+          const modelSrc = this.data.src;
+
+          // Càrrega del model 3D de Sketchfab utilitzant l'API de visor de Sketchfab
+          const api = new Sketchfab('YOUR_SKETCHFAB_API_KEY_HERE');
+          api.init(
+            { 
+              autostart: true,
+              preload: 1,
+              ui_infos: 0,
+              ui_controls: 0,
+              ui_watermark_link: 0,
+              ui_hint: 0,
+              success: (api) => {
+                api.start();
+              }
+            },
+            modelContainer
+          );
+          api.load(modelSrc, (err) => {
+            if (err) {
+              console.log('Error loading model: ' + err);
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
