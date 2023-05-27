@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inicia un layout de LinearLayout, que organitza els seus fills en una única direcció vertical o horitzontal. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"  <!-- Estableix l'amplada del LinearLayout a la de la seva finestra més gran. -->
+        android:layout_height="match_parent"  <!-- Estableix l'altura del LinearLayout a la de la seva finestra més gran. -->
+            android:orientation="vertical" >  <!-- Estableix la direcció del LinearLayout a vertical. -->
+
+                <!-- Crea un EditText amb una ID única, per a que l'usuari introdueixi text. -->
+                    <EditText
+                            android:id="@+id/editText"
+                                    android:layout_width="match_parent"  <!-- Estableix l'amplada de l'EditText a la de la seva finestra més gran. -->
+                                            android:layout_height="wrap_content"  <!-- Estableix l'altura de l'EditText a la del seu contingut. -->
+                                                    android:hint="Introdueix la teva idea aquí" />  <!-- Estableix el text de pista que es mostrarà quan l'EditText estigui buit. -->
+
+                                                        <!-- Crea un botó amb una ID única. -->
+                                                            <Button
+                                                                    android:id="@+id/submitButton"
+                                                                            android:layout_width="wrap_content"  <!-- Estableix l'amplada del botó a la del seu contingut. -->
+                                                                                    android:layout_height="wrap_content"  <!-- Estableix l'altura del botó a la del seu contingut. -->
+                                                                                            android:text="Submit" />  <!-- Estableix el text que es mostrarà al botó. -->
+
+                                                                                            </LinearLayout>
+
+                                                                                            
