@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Consulta d'informàtica</title>
+    <title>Consulta informatica</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <script src="assets/script.js"></script>
 </head>
 <body>
-    <h1>Consulta d'informàtica</h1>
-    <form action="processar_consulta.php" method="POST">
+    <h1>Consulta informatica</h1>
+    <form id="consulta-form">
         <label for="consulta">Introdueix la teva consulta:</label>
         <input type="text" id="consulta" name="consulta" required>
         <button type="submit">Enviar</button>
     </form>
+    <div id="resultat"></div>    
 </body>
 </html>
