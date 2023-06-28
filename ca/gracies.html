@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-07-28" content="ArFv1ZeTwzkhjNE00uAE+XtiQB41fwqG/TqlFMLrepd9sforQSvQE/tgfIbUMYNuNre4QR1k4/z8xp2mV3dbhwwAAABeeyJvcmlnaW4iOiJodHRwczovL2FmcmFtZS5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDEyMTcwMDIsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+<meta charset="utf-8">
+<title>Blas Llavero Ruiz</title>
+<meta name="description" content="Blas Llavero Ruiz">
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="../blasllavero/components/aabb-collider.js"></script>
+<script src="../blasllavero/components/info-message.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@4.0.1/dist/aframe-event-set-component.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
+<script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
+<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?always=1"></script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "97bv44d7ce");
+</script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEYK64HN73"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SEYK64HN73');
+</script>
+</head>
+
+<body>
+  <a-scene renderer="colorManagement: true;" cursor="rayOrigin: mouse" raycaster="objects: [cube]" fog="color: #bc483e; near: 0; far: 65;" info-message="htmlSrc: #messageText">
+    <a-assets>
+      <a-asset-item id="messageText" src="message.html"></a-asset-item>
+      <a-mixin id="cube" event-set__grab="material.color: #FFEF4F" event-set__grabend="material.color: #F2E646" event-set__hit="material.color: #F2E646" event-set__hitend="material.color: #EF2D5E" event-set__mousedown="material.color: #FFEF4F" event-set__mouseenter="material.color: #F2E646" event-set__mouseleave="material.color: #EF2D5E" event-set__mouseup="material.color: #F2E646" geometry="primitive: box; height: 0.30; width: 0.30; depth: 0.30" material="color: #EF2D5E;"></a-mixin>
+      <a-asset-item id="oq2_customized"  src="../blasllavero/assets/oculus_quest_2_customized_steve_addition/scene.gltf"></a-asset-item>
+      <a-asset-item id="classroom"  src="../blasllavero/assets/auiv_classroom/scene.gltf"></a-asset-item>
+      <a-asset-item id="cyberpunk_laptop"  src="../blasllavero/assets/cyberpunk_laptop/scene.gltf"></a-asset-item>
+      <a-asset-item id="server_rack"  src="../blasllavero/assets/server_rack_and_console_v3/scene.gltf"></a-asset-item>
+    </a-assets>
+
+<!-- Plataforma de l'usuari -->
+<a-entity
+id="rig"
+movement-controls="constrainToNavMesh: true; speed: 0.15;"
+>
+<a-entity
+  id="head"
+  camera="far: 40; active: true"
+  position="4 2.2 5"
+  look-controls="pointerLockEnabled: true"
+>
+</a-entity>
+<a-entity
+  body="type: static; shape: sphere; sphereRadius: 0.04;"
+  hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"
+  sphere-collider="objects: .throwable"
+  grab
+  teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+  hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
+  curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
+></a-entity>
+<a-entity
+  body="type: static; shape: sphere; sphereRadius: 0.04;"
+  hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"
+  sphere-collider="objects: .throwable"
+  grab
+  teleport-controls="cameraRig: #rig; teleportOrigin: #head; button: trigger; collisionEntities: #navmesh; 
+  hitCylinderColor: #8b8bda; hitCylinderRadius: 0.33; hitCylinderHeight: 0.12; curveHitColor: #8cbc9b; 
+  curveMissColor: #bc8cad; curveNumberPoint: 24; curveLineWidth: 0.066; interval: 22; curveShootingSpeed: 8"
+></a-entity>
+</a-entity>
+
+<!-- Nom -->
+<a-entity id="color" position="4 4.1 0"
+animation="property: components.text.material.uniforms.color.value; type: color; to: green; dir: alternate; loop: true"
+text="color: green; align: center; value: GRÀCIES PER CONTACTAR-ME EN BREU REBRAS UNA RESPOSTA!; width: 7"></a-entity>
+
+</a-scene>
+</body>
+</html>
